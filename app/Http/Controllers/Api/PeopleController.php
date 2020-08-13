@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\People;
+use App\Http\Requests\StorePeopleRequest;
 
 class PeopleController extends Controller
 {
@@ -13,7 +15,7 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        echo 'index';
+        return response()->json(['people' => People::all()]);
     }
 
     /**
@@ -32,7 +34,7 @@ class PeopleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePeopleRequest $request)
     {
         echo 'store';
     }
