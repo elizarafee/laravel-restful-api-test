@@ -13,7 +13,7 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        //
+        echo 'index';
     }
 
     /**
@@ -23,7 +23,7 @@ class PeopleController extends Controller
      */
     public function create()
     {
-        //
+        echo 'create';
     }
 
     /**
@@ -34,7 +34,7 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo 'store';
     }
 
     /**
@@ -45,7 +45,7 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-        //
+        echo 'show';
     }
 
     /**
@@ -56,7 +56,7 @@ class PeopleController extends Controller
      */
     public function edit($id)
     {
-        //
+        echo 'edit';
     }
 
     /**
@@ -68,7 +68,7 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        echo 'update';
     }
 
     /**
@@ -79,6 +79,6 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo 'destroy';
     }
 }
