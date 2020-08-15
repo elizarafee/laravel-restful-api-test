@@ -105,6 +105,12 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        echo 'destroy';
+        $person = People::find($id);
+        $delete = $person->delete();
+
+        if ($delete) {
+            return response()->json(['status' => true, 'message' => 'Profile successfully deleted.', 'data' => 'Datas are not available'], 200);
+        }
+        return response()->json(['status' => false, 'message' => 'Failed to delete profile. Please try again.'], 500);
     }
 }
