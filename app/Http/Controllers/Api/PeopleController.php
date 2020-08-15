@@ -15,7 +15,7 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        return response()->json(['people' => People::all()]);
+        return response()->json(['status' => true, 'data' => People::all()]);
     }
 
     /**
@@ -47,7 +47,7 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-        echo 'show';
+       echo 'show';
     }
 
     /**
@@ -81,6 +81,6 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        echo 'destroy';
+       echo 'destroy';
     }
 }
