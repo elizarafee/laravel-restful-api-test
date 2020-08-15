@@ -36,7 +36,20 @@ class PeopleController extends Controller
      */
     public function store(StorePeopleRequest $request)
     {
-        echo 'store';
+        $people = [
+            'name' => $request->get('name'),
+            'age' => $request->get('age'),
+            'city' => $request->get('city'),
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+
+        $store = People::create($people);
+
+        if ($store) {
+            return response()->json(['status' => true, 'message' => 'People successfully created.', 'data' => $store], 201);
+        }
+
+        return response()->json(['status' => false, 'message' => 'Failed to store people. Please try again.'], 500);
     }
 
     /**
@@ -47,7 +60,7 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-       echo 'show';
+        echo 'show';
     }
 
     /**
@@ -81,6 +94,6 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-       echo 'destroy';
+        echo 'destroy';
     }
 }
